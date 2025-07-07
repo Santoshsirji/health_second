@@ -66,6 +66,6 @@ def predict_image(image_path: str) -> str:
 # Example usage
 if __name__ == "__main__":
     # Use an absolute path for the sample image too
-    sample_image = SCRIPT_DIR.parent / "data" / "chest_xray" / "test" / "NORMAL" / "NORMAL2-IM-0381-0001.jpeg"
+    sample_image = SCRIPT_DIR.parent / "data" / "chest_xray" / "test" / "PNEUMONIA" / "person1_virus_12.jpeg"
     result = predict_image(str(sample_image))
     print(f'Prediction: {result}')
