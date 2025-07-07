@@ -1,13 +1,11 @@
 services:
-  # A web service for the FastAPI backend
   - type: web
     name: chest-xray-api
     env: python
-    region: oregon # Choose the region closest to your users
+    region: oregon
+    build:
+      pythonVersion: 3.11.8
     buildCommand: pip install -r requirements.txt
     startCommand: cd backend/src && uvicorn api:app --host 0.0.0.0 --port $PORT
-    envVars:
-      - key: PYTHON_VERSION
-        value: 3.11.8
     healthCheckPath: /
-    autoDeploy: true 
+    autoDeploy: true
