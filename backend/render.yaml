@@ -3,10 +3,8 @@ services:
     name: chest-xray-api
     env: python
     region: oregon
-    build:
-      pythonVersion: 3.11.8
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: cd backend/src && uvicorn api:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /
     autoDeploy: true
-    plan: starter  # Add this if you're using the free tier
+    plan: starter
