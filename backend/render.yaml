@@ -1,7 +1,6 @@
 services:
   - type: web
     name: chest-xray-api
-    env: python
     region: oregon
     buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: cd backend/src && uvicorn api:app --host 0.0.0.0 --port $PORT
