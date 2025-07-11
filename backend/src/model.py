@@ -44,35 +44,6 @@ import torch.nn.functional as F
 
 
 
-
-'''
-Explainations: 
-
-Conv2d: A layer that scans the image with small windows (filters) to find patterns like edges, spots, etc
-
-- ReLu (Rectified Linear Unit): A simple rule: if a number is negative -> set it to zero. Keeps positive numbers as-is. Mkes the model learn better. 
-
-- MaxPool2d: Reduces the size of the image by keepiung only the most important information (like summarizing). 
-
-- Linear: A classic math formula y = mx + c but with multiple inputs and outputs. 
-
-- forward() function: Deines how the input (image) flows through the layers to produce a prediction. 
-
-- view(): REshapes data. We flatten 3D image features into a 1D list so we can pass it to the fully conneceted layers. 
-
-
-
-In pytorch, every custom model you make (a class that inherits from nn.Module) must have a forward() function  or a method. 
-
-It defines how input data (your image) moves through your model, layer by layer, operation by operation, unitl you get the final output. 
-
-You can think of forward() as a blueprint for the model's data path: 
-where data goes
-what operations happen
-how results move from layer to the next. 
-'''
-
-
 # In order to mitigate the issue; we use resenet18 model which is a pre-trained model that has been trained on a large dataset. 
 
 from torchvision.models import resnet18, ResNet18_Weights
